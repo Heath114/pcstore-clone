@@ -29,14 +29,14 @@ export default function Header() {
           <SearchIconButton onClick={() => setIsSearchOpen(true)} />
         </div>
         {/* Center: Logo */}
-        <Link href="/" className="absolute left-1/2 -translate-x-1/2">
+        <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center h-10">
           <Image 
-            src="/images/logos/2.png" 
+            src="/images/logos/1.png" 
             alt="TechShop Logo" 
-            width={100} 
-            height={33}
+            width={120} 
+            height={40}
             priority
-            className="w-20 sm:w-24 lg:w-28"
+            className="h-16 w-auto object-contain"
           />
         </Link>
         {/* Right: Language & Call */}
@@ -57,14 +57,14 @@ export default function Header() {
         
         {/* Center: Logo */}
         <div className="flex justify-center">
-          <Link href="/">
+          <Link href="/" className="flex items-center h-12">
             <Image 
-              src="/images/logos/2.png" 
+              src="/images/logos/1.png" 
               alt="TechShop Logo" 
-              width={120} 
-              height={40} 
+              width={140} 
+              height={47} 
               priority
-              className="w-28 lg:w-32 2xl:w-36"
+              className="h-14 w-auto object-contain"
             />
           </Link>
         </div>

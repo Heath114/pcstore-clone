@@ -27,7 +27,7 @@ const slides: Slide[] = [
       'Experience stunning visuals with our premium monitors, delivering exceptional color accuracy and immersive viewing.',
     ctaText: 'Shop now',
     ctaHref: '/products/monitors',
-    imageUrl: '/slider/3.png',
+    imageUrl: '/slider/4.webp',
     alt: 'High-resolution professional monitor',
   },
   {
@@ -37,7 +37,7 @@ const slides: Slide[] = [
       'Power your day with reliable capacity and premium build quality.',
     ctaText: 'Explore',
     ctaHref: '/collections/new',
-    imageUrl: '/slider/1.webp',
+    imageUrl: '/slider/5.webp',
     alt: 'Lifestyle tech setup',
   },
 ];
@@ -64,7 +64,7 @@ function ProHeroSlider() {
                   alt={s.alt ?? s.title}
                   fill
                   priority={i === 0}
-                  className="object-fit"
+                  className="object-cover"
                 />
 
                 {/* Left gradient overlay */}

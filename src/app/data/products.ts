@@ -251,13 +251,10 @@ export const ProductList: Product[] = [
             "Quick Setup Guide"
         ],
         price: 449.99,
-        images: ["/images/products/4.png", "/images/products/4.webp", "/images/products/img1.jpg", "/images/products/img3.jpg"],
+        images: ["/images/products/6.png", "/images/products/img3.jpg", "/images/products/img5.jpg"],
         slug: "lg-ultrawide-34-inch-curved-monitor"
     },
 ];
-
-
-
 
 
 export interface Brand {
