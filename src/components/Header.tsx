@@ -32,7 +32,7 @@ export default function Header() {
         {/* Center: Logo */}
         <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center h-10">
           <Image 
-            src="/images/logos/1.png" 
+            src="/images/logos/9.png" 
             alt="TechShop Logo" 
             width={120} 
             height={40}
@@ -60,7 +60,7 @@ export default function Header() {
         <div className="flex justify-center">
           <Link href="/" className="flex items-center h-12">
             <Image 
-              src="/images/logos/1.png" 
+              src="/images/logos/9.png" 
               alt="TechShop Logo" 
               width={140} 
               height={47} 
