@@ -27,8 +27,8 @@ export default function ProductsSection() {
     const locale = (params?.locale as Locale) || 'en';
     const t = getTranslations(locale, 'common');
     
-    // Add more categories as needed
-    const categoryMap = {
+    // Add more categories as needed - wrapped in useMemo to prevent recreation
+    const categoryMap = React.useMemo(() => ({
         'All': t.products.all_products,
         'Monitors': 'Monitors',
 
@@ -39,7 +39,7 @@ export default function ProductsSection() {
         // 'Computers': 'Computers',
         // 'Wearables': 'Wearables',
         'Accessories': 'Accessories'
-    }
+    }), [t.products.all_products]);
     
     const filteredProjects = filter === 'All'
         ? ProductList
@@ -64,7 +64,7 @@ export default function ProductsSection() {
                 left: offsetLeft
             });
         }
-    }, [filter, mounted]);
+    }, [filter, mounted, categoryMap]);
 
     if (!mounted) {
         return null;

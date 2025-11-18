@@ -5,7 +5,7 @@ import localFont from 'next/font/local'
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import LenisScroll from '@/components/LenisScroll';
-import { businessConfig, type Locale } from '@/locales/business-config';
+import { businessConfig } from '@/locales/business-config';
 import { getLocaleFromParams, getLocaleMetadata } from '@/lib/locale-utils';
 
 // Load Neue Montreal font family as the global font
@@ -67,17 +67,17 @@ export async function generateStaticParams() {
   return businessConfig.locales.map((locale) => ({ locale }));
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>) {
-  const locale = getLocaleFromParams(params);
+  const locale = getLocaleFromParams(await params);
   const { htmlLang, dir } = getLocaleMetadata(locale);
-  const HeaderComponent = Header as any;
-  const FooterComponent = Footer as any;
+  const HeaderComponent = Header as React.ComponentType<{ locale: typeof locale }>;
+  const FooterComponent = Footer as React.ComponentType<{ locale: typeof locale }>;
 
   return (
     <html lang={htmlLang} dir={dir} className={neueMontrealFont.variable} suppressHydrationWarning>

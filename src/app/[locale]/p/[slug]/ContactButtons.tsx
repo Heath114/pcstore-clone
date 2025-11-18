@@ -2,17 +2,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import type { Product } from '@/app/data/products';
 import Image  from 'next/image';
 
-// You can reuse the WhatsApp icon from components.tsx
-const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-        <path d="M16.75 13.96c.25.13.43.2.5.33.07.13.07.5-.02.94-.1.44-.65.81-1.22.84-.57.03-1.05-.1-1.92-.44a7.48 7.48 0 01-2.9-2.61c-.57-.84-.9-1.84-.9-2.84 0-1 .33-1.84.92-2.58.58-.75 1.35-1.16 2.1-1.16.25 0 .48.04.68.08.2.03.3.07.33.4a1 1 0 01-.13 1.15l-.22.33c-.1.13-.2.27-.36.4-.17.13-.3.23-.33.3.04.07.1.17.18.28.38.57.85 1.1 1.4 1.56.57.47 1.13.82 1.63.96.1.03.2.04.3.02h.02c.1-.03.2-.13.3-.26l.22-.36c.13-.2.3-.33.5-.4.2-.07.4-.04.54.06l.85.64c.2.14.3.28.36.42.07.15.04.3-.06.42l-.4.6zM12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z" />
-    </svg>
-);
-
-// New iMessage/SMS Icon
+// iMessage/SMS Icon
 const MessageIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

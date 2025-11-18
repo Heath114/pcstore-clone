@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react'
-import { collection, doc, addDoc, query, where, getDocs, setDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { useParams } from 'next/navigation';
 import { getTranslations } from '@/lib/i18n';

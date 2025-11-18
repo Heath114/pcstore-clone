@@ -6,7 +6,7 @@
 import { businessConfig, type Locale } from '@/locales/business-config';
 
 // Cache for loaded translations
-const translationCache: Record<string, any> = {};
+const translationCache: Record<string, Record<string, unknown>> = {};
 
 /**
  * Get translations for a specific namespace and locale
@@ -24,6 +24,7 @@ export function getTranslations(locale: Locale, namespace: string) {
 
   try {
     // Dynamically import the JSON file
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const translations = require(`@/locales/${locale}/${namespace}.json`);
     translationCache[cacheKey] = translations;
     return translations;
@@ -33,6 +34,7 @@ export function getTranslations(locale: Locale, namespace: string) {
     // Fallback to default locale if not already using it
     if (locale !== businessConfig.defaultLocale) {
       try {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
         const fallback = require(`@/locales/${businessConfig.defaultLocale}/${namespace}.json`);
         return fallback;
       } catch {
@@ -51,13 +53,13 @@ export function getTranslations(locale: Locale, namespace: string) {
  * @param fallback - Optional fallback value if path not found
  * @returns The translation string or fallback
  */
-export function t(translations: any, path: string, fallback?: string): string {
+export function t(translations: Record<string, unknown>, path: string, fallback?: string): string {
   const keys = path.split('.');
-  let result = translations;
+  let result: unknown = translations;
 
   for (const key of keys) {
     if (result && typeof result === 'object' && key in result) {
-      result = result[key];
+      result = (result as Record<string, unknown>)[key];
     } else {
       return fallback || path;
     }

@@ -13,9 +13,10 @@ import { Locale } from '@/locales/business-config';
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const params = useParams();
-  const locale = (params.locale as Locale) || 'en';
-  const t = getTranslations(locale, 'common');
+  // const params = useParams();
+  // const locale = (params.locale as Locale) || 'en';
+  // Translation object available for future use
+  // const t = getTranslations(locale, 'common');
 
   return (
     // The header is fixed to the top of the viewport.
@@ -391,9 +392,10 @@ function LanguageButton() {
 }
 
 function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  const params = useParams();
-  const locale = (params.locale as Locale) || 'en';
-  const t = getTranslations(locale, 'common');
+  // const params = useParams();
+  // const locale = (params.locale as Locale) || 'en';
+  // Translation object available for future use
+  // const t = getTranslations(locale, 'common');
   
   // Lock body scroll when modal is open
   React.useEffect(() => {

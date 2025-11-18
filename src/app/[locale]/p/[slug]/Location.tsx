@@ -6,7 +6,6 @@ export default function Location() {
     // Change these coordinates to your exact location
     const latitude = 37.7749;
     const longitude = -122.4194;
-    const placeName = "TechStore Main Location";
 
     // This generates a Google Maps embed with a marker at the specified coordinates
     const mapUrl = `https://maps.google.com/maps?q=${latitude},${longitude}&t=&z=15&ie=UTF8&iwloc=&output=embed`;

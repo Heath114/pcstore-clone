@@ -43,7 +43,7 @@ function RelatedProductCard({ product, locale }: { product: Product, locale: Loc
     );
 }
 
-export default async function ProductPage({ params }: { params: { locale: string; slug: string } }) {
+export default async function ProductPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   
   const { slug, locale } = await params;
   const localeTyped = locale as Locale;

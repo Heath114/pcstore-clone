@@ -2,9 +2,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { Phone, Mail, Map } from 'lucide-react';
+import { Phone, Map } from 'lucide-react';
 import NumberInputComponent from './Subscribe'
-import Image from 'next/image'
 import { 
   FacebookIcon, 
   TwitterIcon, 

@@ -6,8 +6,6 @@ import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
 import React from 'react';
-import { ItemList } from '@/app/data/items';
-import { useRouter } from 'next/navigation';
 
 type Slide = {
   id: number;
@@ -100,30 +98,6 @@ function ProHeroSlider() {
     </section>
   );
 }
-
-
-function ItemsSection() {
-  const router = useRouter();
-
-  return (
-    <div className="flex items-start gap-16 py-4 w-[75%] mx-auto mb-8 py-4 bg-white -lg shadow-lg">
-      {ItemList.map((item) => (
-        <div key={item.id} className="flex-1 cursor-pointer">
-          <Image
-            src={item.image}
-            alt={item.name}
-            width={80}
-            height={80}
-            className="object-contain bg-[#f1edfc] -lg mx-auto w-24 h-24"
-            onClick={() => router.push(item.link || '/')}
-          />
-          <p className="text-center mt-2 text-gray-900 text-base">{item.name}</p>
-        </div>
-      ))}
-    </div>
-  )
-}
-
 
 export default function Hero() {
   return (

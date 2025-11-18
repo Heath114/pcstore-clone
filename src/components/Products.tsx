@@ -4,7 +4,6 @@
 import { ProductList } from '@/app/data/products';
 import { getProductPrice } from '@/app/data/products';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter, useParams } from 'next/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
@@ -19,7 +18,6 @@ import 'swiper/css/navigation';
 
 export default function ProductsSection() {
     const [mounted, setMounted] = React.useState(false);
-    const [disableSwiper, setDisableSwiper] = React.useState(false);
     const router = useRouter();
     const params = useParams();
     const locale = (params.locale as Locale) || 'en';
@@ -27,7 +25,6 @@ export default function ProductsSection() {
     
     React.useEffect(() => {
         setMounted(true);
-        setDisableSwiper(true);
     }, []);
 
     if (!mounted) {
